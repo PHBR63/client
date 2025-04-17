@@ -1,20 +1,37 @@
-const { verifyToken } = require('../config/jwt');
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
 const auth = async (req, res, next) => {
   try {
     const token = req.header('Authorization')?.replace('Bearer ', '');
     
     if (!token) {
-      throw new Error();
+      return res.status(401).json({ message: 'Token não fornecido' });
     }
 
-    const decoded = verifyToken(token);
-    req.user = decoded.user;
-    
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(401).json({ message: 'Usuário não encontrado' });
+    }
+
+    req.user = user;
     next();
-  } catch (err) {
-    res.status(401).json({ message: 'Por favor, faça login para acessar este recurso' });
+  } catch (error) {
+    res.status(401).json({ message: 'Token inválido' });
   }
 };
 
-module.exports = auth; 
+const isMaster = async (req, res, next) => {
+  try {
+    if (req.user.role !== 'master') {
+      return res.status(403).json({ message: 'Acesso negado. Apenas mestres podem realizar esta ação.' });
+    }
+    next();
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao verificar permissões' });
+  }
+};
+
+module.exports = { auth, isMaster }; 
