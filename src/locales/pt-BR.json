@@ -1,0 +1,25 @@
+{
+  "login": {
+    "title": "Ordem Paranormal RPG",
+    "email": "Email",
+    "password": "Senha",
+    "rememberMe": "Lembrar-me",
+    "submit": "Entrar",
+    "forgotPassword": "Esqueceu a senha?",
+    "createAccount": "Criar conta",
+    "showPassword": "Mostrar senha",
+    "hidePassword": "Esconder senha",
+    "success": "Login realizado com sucesso!",
+    "errors": {
+      "requiredEmail": "Email é obrigatório",
+      "invalidEmail": "Email inválido",
+      "requiredPassword": "Senha é obrigatória",
+      "passwordLength": "Senha deve ter pelo menos 6 caracteres",
+      "generic": "Email ou senha inválidos. Por favor, tente novamente."
+    }
+  },
+  "footer": {
+    "about": "Sobre",
+    "contact": "Contato"
+  }
+} 

@@ -1,0 +1,40 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 80%
+        threshold: 1%
+    patch:
+      default:
+        target: 80%
+        threshold: 1%
+
+ignore:
+  - "src/**/*.test.js"
+  - "src/**/*.test.jsx"
+  - "src/**/__tests__/**"
+  - "src/setupTests.js"
+  - "src/reportWebVitals.js"
+  - "src/index.js"
+
+comment:
+  layout: "header, diff, files, footer"
+  behavior: default
+  require_changes: false
+  require_base: no
+  require_head: yes
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
+codecov:
+  require_ci_to_pass: yes
+
+fixes:
+  - "src/::src/"
+  - "src/::src/" 
