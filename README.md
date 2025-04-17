@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# Ficha Paranormal - Gerenciador de Campanhas para Ordem Paranormal RPG
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um aplicativo web desenvolvido para facilitar o gerenciamento de campanhas do Ordem Paranormal RPG, permitindo que mestres e jogadores tenham uma experiência mais imersiva e organizada.
 
-## Available Scripts
+## Funcionalidades Principais
 
-In the project directory, you can run:
+- Gerenciamento de usuários (mestres e jogadores)
+- Criação e administração de campanhas
+- Sistema de fichas de personagens
+- Rolagem de dados integrada
+- Chat em tempo real
+- Gerenciamento de rituais e habilidades
+- Sistema de NEX e progressão
+- Suporte a múltiplos idiomas (Português e Inglês)
+- Tema claro/escuro
+- Efeitos visuais com Particles.js
+- Animações suaves
+- Design responsivo
+- Acessibilidade
+- Analytics integrado
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend
+- Node.js
+- Express
+- MongoDB
+- Socket.IO
+- JWT para autenticação
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- React 18
+- Material-UI
+- Styled Components
+- React Router
+- i18next
+- Yup
+- Jest
+- React Testing Library
+- Socket.IO Client
+- Vercel Analytics
 
-### `npm test`
+## Requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 16+
+- npm ou yarn
 
-### `npm run build`
+## Instalação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/ficha-paranormal.git
+cd ficha-paranormal
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Instale as dependências do backend:
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Instale as dependências do frontend:
+```bash
+cd client
+npm install
+```
 
-### `npm run eject`
+4. Configure as variáveis de ambiente:
+- Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+```
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/ficha-paranormal
+JWT_SECRET=seu_segredo_jwt_aqui
+NODE_ENV=development
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Executando o Projeto
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Inicie o servidor backend:
+```bash
+npm run dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Em outro terminal, inicie o frontend:
+```bash
+cd client
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+O aplicativo estará disponível em:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
 
-## Learn More
+## Testes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para executar os testes:
+```bash
+npm test
+# ou
+yarn test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para ver a cobertura de testes:
+```bash
+npm test -- --coverage
+# ou
+yarn test --coverage
+```
 
-### Code Splitting
+## Estrutura do Projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+ficha-paranormal/
+├── client/                # Frontend React
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── styles/
+│   │   ├── config/
+│   │   ├── locales/
+│   │   └── __tests__/
+│   ├── public/
+│   └── package.json
+├── server.js             # Ponto de entrada do servidor
+├── package.json          # Dependências do backend
+└── .env                  # Variáveis de ambiente
+```
 
-### Analyzing the Bundle Size
+## Contribuição
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
 
-### Making a Progressive Web App
+## Licença
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-### Advanced Configuration
+## Contato
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email: seu-email@exemplo.com
+- Discord: seu-usuario#1234
+- Twitter: @seu-usuario
