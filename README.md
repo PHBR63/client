@@ -1,10 +1,16 @@
-# Ficha Paranormal RPG
+# Ficha Paranormal - Gerenciador de Campanhas para Ordem Paranormal RPG
 
-Aplicação web para gerenciamento de fichas do RPG Ordem Paranormal.
+Este é um aplicativo web desenvolvido para facilitar o gerenciamento de campanhas do Ordem Paranormal RPG, permitindo que mestres e jogadores tenham uma experiência mais imersiva e organizada.
 
-## Funcionalidades
+## Funcionalidades Principais
 
-- Login com validação de formulário
+- Gerenciamento de usuários (mestres e jogadores)
+- Criação e administração de campanhas
+- Sistema de fichas de personagens
+- Rolagem de dados integrada
+- Chat em tempo real
+- Gerenciamento de rituais e habilidades
+- Sistema de NEX e progressão
 - Suporte a múltiplos idiomas (Português e Inglês)
 - Tema claro/escuro
 - Efeitos visuais com Particles.js
@@ -15,6 +21,14 @@ Aplicação web para gerenciamento de fichas do RPG Ordem Paranormal.
 
 ## Tecnologias Utilizadas
 
+### Backend
+- Node.js
+- Express
+- MongoDB
+- Socket.IO
+- JWT para autenticação
+
+### Frontend
 - React 18
 - Material-UI
 - Styled Components
@@ -23,6 +37,7 @@ Aplicação web para gerenciamento de fichas do RPG Ordem Paranormal.
 - Yup
 - Jest
 - React Testing Library
+- Socket.IO Client
 - Vercel Analytics
 
 ## Requisitos
@@ -35,22 +50,45 @@ Aplicação web para gerenciamento de fichas do RPG Ordem Paranormal.
 1. Clone o repositório:
 ```bash
 git clone https://github.com/seu-usuario/ficha-paranormal.git
-cd ficha-paranormal/client
+cd ficha-paranormal
 ```
 
-2. Instale as dependências:
+2. Instale as dependências do backend:
 ```bash
 npm install
-# ou
-yarn install
 ```
 
-3. Inicie o servidor de desenvolvimento:
+3. Instale as dependências do frontend:
 ```bash
-npm start
-# ou
-yarn start
+cd client
+npm install
 ```
+
+4. Configure as variáveis de ambiente:
+- Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+```
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/ficha-paranormal
+JWT_SECRET=seu_segredo_jwt_aqui
+NODE_ENV=development
+```
+
+## Executando o Projeto
+
+1. Inicie o servidor backend:
+```bash
+npm run dev
+```
+
+2. Em outro terminal, inicie o frontend:
+```bash
+cd client
+npm start
+```
+
+O aplicativo estará disponível em:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
 
 ## Testes
 
@@ -71,16 +109,20 @@ yarn test --coverage
 ## Estrutura do Projeto
 
 ```
-client/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   ├── config/
-│   ├── locales/
-│   └── __tests__/
-├── public/
-└── package.json
+ficha-paranormal/
+├── client/                # Frontend React
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── styles/
+│   │   ├── config/
+│   │   ├── locales/
+│   │   └── __tests__/
+│   ├── public/
+│   └── package.json
+├── server.js             # Ponto de entrada do servidor
+├── package.json          # Dependências do backend
+└── .env                  # Variáveis de ambiente
 ```
 
 ## Contribuição
